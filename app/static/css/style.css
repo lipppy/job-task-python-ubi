@@ -27,7 +27,7 @@ a:active {
 
 ul {
     list-style: none;
-    padding: 0;
+    padding: 0 0 20px;
 }
 li {
     padding-left: 1.3em;
