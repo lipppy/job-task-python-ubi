@@ -8,8 +8,8 @@ import numpy as np
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-    return "<h1>Welcome to CodingX</h1>"
+def home():
+    return render_template('public/home.html')
 
 @app.route('/timezones', methods=['GET'])
 def api_timezones():
@@ -121,4 +121,4 @@ def api_timezones():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return "<h1>404</h1><p>The resource could not be found.</p>", 404
+    return render_template('public/error.html'), 404

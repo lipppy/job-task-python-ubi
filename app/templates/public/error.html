@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} - 404 Not Found{% endblock %}
+
+{% block body %}
+{% include 'public/block.header.html' %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="error-code">404</h2>
+            <p class="error-message">Oh dear, this link isn’t working. Go back to <a href="/">Home</a>.</p>
+        </div>
+    </div>
+{% endblock %}

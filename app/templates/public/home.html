@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %} - Home{% endblock %}
+
+{% block body %}
+{% include 'public/block.header.html' %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Timezone information</h2>
+            <h3>API call:</h3>
+            <ul class="list-api-call">
+                <li>/timezones</li>
+                <li>/timezones?lat={latitude}&lon={longitude}</li>
+                <li>/timezones?lat={latitude}&lon={longitude}&utccheck=raw</li>
+            </ul>
+            <h3>Parameters:</h3>
+            <ul class="list-parameters">
+                <li><b>without parameter or with unknown parameter(s):</b> displays all available timezones</li>
+                <li><b>lat:</b> latitude in EPSG:4326 coordinate reference system</li>
+                <li><b>lon:</b> longitude in EPSG:4326 coordinate reference system</li>
+                <li><b>utccheck:</b> calculate UTC timezone for "uninhabited" locations or international waters</li>
+            </ul>
+            <h4>Examples of API calls:</h4>
+            <ul class="list-examples">
+                <li><b>without parameter or with unknown parameter(s):</b> displays all available timezones</li>
+                <li><b>lat:</b> latitude in EPSG:4326 coordinate reference system</li>
+                <li><b>lon:</b> longitude in EPSG:4326 coordinate reference system</li>
+                <li><b>utccheck:</b> calculate UTC timezone for "uninhabited" locations or international waters</li>
+            </ul>
+            <h4>Data sources:</h4>
+            <p><a href="http://efele.net/maps/tz/world/" target="_blank">http://efele.net/maps/tz/world/</a></p>
+            <p><a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/timezones/" target="_blank">https://www.naturalearthdata.com/downloads/10m-cultural-vectors/timezones/</a></p>
+        </div>
+    </div>
+{% endblock %}
