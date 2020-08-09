@@ -81,7 +81,7 @@ def api_timezones():
         # If we reach this point then our point was not found in tz_world_mp - Check UTC
         # 1. Arg: utccheck = raw - Basic UTC - Polygons set manually
         # 2. No utccheck arg or utcheck arg not equal raw
-        if 'utccheck' in request.args and request.args == 'raw':
+        if 'utccheck' in request.args and request.args['utccheck'] == 'raw':
             left = -180.0
             right = -172.5
             utc_polygons = []

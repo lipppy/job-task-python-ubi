@@ -10,9 +10,9 @@
             <h2>Timezone information</h2>
             <h3>API call:</h3>
             <ul class="list-api-call">
-                <li>/timezones</li>
-                <li>/timezones?lat={latitude}&lon={longitude}</li>
-                <li>/timezones?lat={latitude}&lon={longitude}&utccheck=raw</li>
+                <li>{{ url_for('api_timezones') }}</li>
+                <li>{{ url_for('api_timezones') }}?lat={latitude}&lon={longitude}</li>
+                <li>{{ url_for('api_timezones') }}?lat={latitude}&lon={longitude}&utccheck=raw</li>
             </ul>
             <h3>Parameters:</h3>
             <ul class="list-parameters">
@@ -23,10 +23,13 @@
             </ul>
             <h4>Examples of API calls:</h4>
             <ul class="list-examples">
-                <li><b>without parameter or with unknown parameter(s):</b> displays all available timezones</li>
-                <li><b>lat:</b> latitude in EPSG:4326 coordinate reference system</li>
-                <li><b>lon:</b> longitude in EPSG:4326 coordinate reference system</li>
-                <li><b>utccheck:</b> calculate UTC timezone for "uninhabited" locations or international waters</li>
+                <li><a href="{{ request.base_url }}{{ url_for('api_timezones') }}?lat=48.19&lon=16.39" target="_blank">{{ request.base_url }}timezones?lat=48.19&lon=16.39</a> - returning timezone "Europe/Vienna"</li>
+                <li><a href="{{ request.base_url }}{{ url_for('api_timezones') }}?lat=47.49&lon=19.04" target="_blank">{{ request.base_url }}timezones?lat=47.49&lon=19.04</a> - Budapest, Hungary - returning timezone "Europe/Budapest"</li>
+                <li><a href="{{ request.base_url }}{{ url_for('api_timezones') }}?lat=34.02&lon=-118.49" target="_blank">{{ request.base_url }}timezones?lat=34.02&lon=-118.49</a> - Los Angeles, USA - returning timezone "America/Los_Angeles"</li>
+                <li><a href="{{ request.base_url }}{{ url_for('api_timezones') }}?lat=-81.31&lon=-175.49" target="_blank">{{ request.base_url }}timezones?lat=-81.31&lon=-175.49</a> - Ross Ice, Antarctica - returning timezone "UTC-12"</li>
+                <li><a href="{{ request.base_url }}{{ url_for('api_timezones') }}?lat=1.75&lon=-157.3" target="_blank">{{ request.base_url }}timezones?lat=1.75&lon=-157.3</a> - a little north from (1°) Kiribati, Christmas Island, Pacific Ocean - returning timezone "Pacific/Kiritimati"</li>
+                <li><a href="{{ request.base_url }}{{ url_for('api_timezones') }}?lat=2.75&lon=-157.3" target="_blank">{{ request.base_url }}timezones?lat=2.75&lon=-157.3</a> - a little north from (1°) Kiribati, Christmas Island, Pacific Ocean - returning timezone "UTC+14" <i>(from UTC zones data)</i></li>
+                <li><a href="{{ request.base_url }}{{ url_for('api_timezones') }}?lat=2.75&lon=-157.3&utccheck=raw" target="_blank">{{ request.base_url }}timezones?lat=2.75&lon=-157.3</a> - a little north from (1°) Kiribati, Christmas Island, Pacific Ocean - returning timezone "UTC-10" <i>(by manually calculated UTC zones)</i></li>
             </ul>
             <h4>Data sources:</h4>
             <p><a href="http://efele.net/maps/tz/world/" target="_blank">http://efele.net/maps/tz/world/</a></p>

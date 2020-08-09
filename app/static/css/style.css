@@ -85,6 +85,14 @@ body {
     vertical-align: bottom;
 }
 
+.list-examples a {
+    font-weight: 700;
+}
+.list-examples li:before {
+    content: "\f0ac";
+    color: #A569BD;
+}
+
 .error-code {
     margin-top: 160px;
     margin-bottom: 30px;
