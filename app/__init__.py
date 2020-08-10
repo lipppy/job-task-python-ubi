@@ -67,8 +67,6 @@ def api_timezones():
         else:
             return jsonify(tzh.get_error_response(907))
 
-
-
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('public/error.html'), 404

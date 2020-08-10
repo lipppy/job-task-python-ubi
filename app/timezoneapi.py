@@ -83,6 +83,8 @@ class TimezoneHelper:
 
     # Timezone information UTC
     def get_timezone_utc(self, location):
+        result = None
+
         try:
             self.set_gdf_from_shp('app/data/timezones/all_tz/all_tz.shp')
         except:
@@ -95,8 +97,12 @@ class TimezoneHelper:
                         "timezone": "UTC" + row['name']
                     }
 
+        return result
+
     # Timezone information UTC (raw)
     def get_timezone_utc_raw(self, location):
+        result = None
+
         try:
             self.set_gdf_utc_raw()
         except:
@@ -107,6 +113,8 @@ class TimezoneHelper:
                 return {
                     "timezone": row['offset']
                 }
+
+        return result
 
     # Error response
     def get_error_response(self, code):
