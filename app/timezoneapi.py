@@ -2,6 +2,7 @@ import os
 import geopandas as gpd
 import numpy as np
 from shapely.geometry import Point, Polygon
+from settings import APP_ROOT
 
 class TimezoneHelper:
     error_responses = [
@@ -52,7 +53,7 @@ class TimezoneHelper:
     # All available timezones's list
     def get_timezones_list(self):
         try:
-            self.set_gdf_from_shp(os.path.abspath(os.path.dirname(__name__)) + '/app/data/timezones/tz_world_mp/tz_world_mp.shp')
+            self.set_gdf_from_shp(APP_ROOT + '/app/data/timezones/tz_world_mp/tz_world_mp.shp')
         except:
             return self.get_error_response(900)
 
@@ -68,7 +69,7 @@ class TimezoneHelper:
         result = None
 
         try:
-            self.set_gdf_from_shp(os.path.abspath(os.path.dirname(__name__)) + '/app/data/timezones/tz_world_mp/tz_world_mp.shp')
+            self.set_gdf_from_shp(APP_ROOT + '/app/data/timezones/tz_world_mp/tz_world_mp.shp')
         except:
             return self.get_error_response(900)
 
@@ -87,7 +88,7 @@ class TimezoneHelper:
         result = None
 
         try:
-            self.set_gdf_from_shp(os.path.abspath(os.path.dirname(__name__)) + '/app/data/timezones/all_tz/all_tz.shp')
+            self.set_gdf_from_shp(APP_ROOT +  '/app/data/timezones/all_tz/all_tz.shp')
         except:
             return self.get_error_response(900)
 
